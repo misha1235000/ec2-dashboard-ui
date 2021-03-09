@@ -1,0 +1,97 @@
+.card-stl {
+    width: 350px;
+    height:230px;
+    margin: 15px;
+}
+
+.card-title-stl {
+    font-size:18px;
+}
+
+.type-stl {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+}
+
+.running-icon {
+    background-color: #66BB6A;
+}
+
+.off-icon {
+    background-color: #f44336;
+}
+
+.restarting-icon {
+    background-color: #FFA726;
+}
+
+.icons-outer {
+    position: absolute;
+    right: 22px;
+    top: -19px;
+}
+
+.inner-content-div {
+    margin: 15px 22px 30px 22px;
+    display: flex;
+    align-items: center;
+}
+
+.state-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: default;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+}
+
+.div-ip {
+    background-color: #e0e0e0;
+    width: 150px;
+    padding:6px;
+    border: 1px solid #c9c9c9;
+    margin-left: 15px;
+    color: #7a7a7a;
+    text-align: center;
+    flex: 60%;
+    display: flex;
+    position: relative;
+}
+
+.div-ip-text {
+    margin-left: 12px;
+}
+
+.div-ip-title {
+    flex: 30%;
+    font-weight: bold;
+}
+
+.copy-btn {
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+}
+
+.copy-icon {
+    font-size: 22px;
+    height: 32px;
+    width: 32px;
+}
+
+.lock-icon {
+    flex: 10%;
+    position: relative;
+    bottom: 1px;
+}
+
+.az-text {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}

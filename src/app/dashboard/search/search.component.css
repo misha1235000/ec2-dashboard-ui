@@ -1,0 +1,42 @@
+.main-div {
+    justify-content: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin: 25px;
+    opacity: 0.8;
+}
+
+.form-stl {
+    background-color: white;
+    padding: 4px 25px;
+    margin: 0px;
+    box-shadow: 0 0 3px 0px;
+    position: sticky;
+    top: 0;
+    display: flex;
+}
+
+.typeahead-stl {
+    margin:5px;
+    width: 250px;
+}
+
+.sort-outer-stl {
+    display: flex;
+    align-items: center;
+}
+
+.sort-stl {
+    margin: 5px;
+}
+
+.upward {
+    transition: 0.4s;
+}
+
+.downward {
+    transform: rotate(180deg);
+    transition: 0.4s;
+}

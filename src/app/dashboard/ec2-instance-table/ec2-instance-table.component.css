@@ -1,0 +1,66 @@
+.running-icon {
+    background-color: #66BB6A;
+}
+
+.off-icon {
+    background-color: #f44336;
+}
+
+.restarting-icon {
+    background-color: #FFA726;
+}
+
+.inner-content-div {
+    margin: 15px 22px 30px 22px;
+    display: flex;
+    align-items: center;
+}
+
+.state-icon {
+    font-size: 17px;
+    height: 17px;
+    width: 17px;
+    cursor: default;
+    padding: 5px;
+    border-radius: 100%;
+    color: white;
+}
+
+.outer-card-div {
+    flex-direction: column;
+    display:flex;
+    flex-wrap: wrap;
+    margin:40px 20px;
+    justify-content: center;
+}
+
+.copy-btn {
+    position: relative;
+    right: 40px;
+}
+
+.virtual-stl {
+    height: 65vh;
+    width:100%;
+}
+
+.header-stl {
+    display: flex;
+    background-color: #DADADA;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    align-items: center;
+    height:60px;
+    padding-left:20px;
+}
+
+.instance-main {
+    height: 60px;
+    align-items: center;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid #DADADA;
+    color:#4a4a4a;
+    padding-left: 20px;
+}

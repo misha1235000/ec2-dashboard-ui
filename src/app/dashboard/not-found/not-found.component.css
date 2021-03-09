@@ -1,0 +1,21 @@
+.not-found-stl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icon-stl {
+    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    color: #8a8a8a;
+}
+
+.desc-stl {
+    color: #8a8a8a;
+    font-size: 23px;
+    font-weight: bold;
+    position: relative;
+    top: 11px;
+}

@@ -1,0 +1,44 @@
+<div class="outer-card-div">
+    <div class="header-stl">
+        <div style="flex: 20%">ID</div>
+        <div style="flex: 20%">Name</div>
+        <div style="flex: 10%">Type</div>
+        <div style="flex: 10%">State</div>
+        <div style="flex: 10%">AZ</div>
+        <div style="flex: 10%">Private IP</div>
+        <div style="flex: 5%"></div>
+        <div style="flex: 10%">Public IP</div>
+        <div style="flex: 5%"></div>
+    </div>
+    <cdk-virtual-scroll-viewport autosize class="virtual-stl" #scroller>
+        <app-not-found givenHeight="calc(100vh - 350px)" description="No results were found" icon="sentiment_dissatisfied"
+                       *ngIf="ecInstancesChunk && ecInstancesChunk.length === 0"></app-not-found>
+        <div class="instance-main" *cdkVirtualFor="let currEcInstance of ecInstancesChunk">
+            <div style="flex: 20%"> {{ currEcInstance.id }} </div>
+            <div style="flex: 20%"> {{ currEcInstance.name }} </div>
+            <div style="flex: 10%"> {{ currEcInstance.type.name }} </div>
+            <div style="flex: 10%" [ngSwitch]="currEcInstance.state">
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon running-icon" *ngSwitchCase="'Running'">check</mat-icon>
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon off-icon" *ngSwitchCase="'Off'">power_settings_new</mat-icon>
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon restarting-icon" *ngSwitchCase="'Restarting'">autorenew</mat-icon>
+            </div>
+            <div style="flex: 10%"> {{ currEcInstance.az }} </div>
+            <div style="flex: 10%">
+                {{ currEcInstance.privateIp }}
+            </div>
+            <div style="flex: 5%">
+                <button matTooltip="Copy IP Address" (click)="copyClipboard(currEcInstance.privateIp)"
+                                matTooltipPosition="above" mat-icon-button color="primary" class="copy-btn">
+                            <mat-icon>content_copy</mat-icon>
+                </button>
+            </div>
+            <div style="flex: 10%"> {{ currEcInstance.publicIp }} </div>
+            <div style="flex: 5%">
+                <button matTooltip="Copy IP Address" (click)="copyClipboard(currEcInstance.publicIp)"
+                        matTooltipPosition="above" mat-icon-button color="primary" class="copy-btn">
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+            </div>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

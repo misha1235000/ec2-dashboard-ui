@@ -1,0 +1,21 @@
+<div class="main-div">
+    <form class="form-stl" onsubmit="return false">
+        <mat-form-field class="typeahead-stl">
+            <mat-label>EC2 Name/Ip</mat-label>
+            <input type="text" aria-label="Search Name / IP" matInput [formControl]="searchFormControl" (ngModelChange)="filter()"/>
+        </mat-form-field>
+        <div class="sort-outer-stl">
+            <mat-form-field class="sort-stl">
+                <mat-label>Sort By</mat-label>
+                <mat-select (selectionChange)="changeSelection($event)">
+                    <mat-option *ngFor="let currSortType of sortTypes" [value]="currSortType.value">
+                        {{ currSortType.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button *ngIf="highToLow !== undefined" (click)="toggleSort()" type="button" mat-icon-button color="primary">
+                <mat-icon [class]="highToLow ? 'upward' : 'downward'">arrow_downward</mat-icon>
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="dashboard-main">
+    <!-- Error if no network available from the REST API. -->
+    <div class="img-container" *ngIf="internalError">
+        <img class="errImg" src="/assets/500_error.png"/>
+     </div>
+
+    <mat-slide-toggle *ngIf="ecInstancesOriginal && ecInstancesOriginal.length > 0" color="warn" (change)="changeView();" class="toggle-stl">Table View (Virtual)</mat-slide-toggle>
+
+    <div class="spinner-outer" *ngIf="!ecInstancesOriginal && !internalError">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <app-not-found givenHeight="calc(100vh - 140px)" description="No EC2 Instances available yet" icon="sentiment_very_dissatisfied"
+                   *ngIf="ecInstancesOriginal && ecInstancesOriginal.length === 0 && !internalError"></app-not-found>
+
+    <!-- Grid View (Doesn't include virtual scroll) used the virtual-scroll-viewport here only to use the scroller. -->
+    <cdk-virtual-scroll-viewport *ngIf="!virtual"
+                                 [ngStyle]="{ 'display': ecInstancesOriginal && ecInstancesOriginal.length > 0 ? 'block' : 'none' }"
+                                 #scroller itemSize="20 * 10" class="viewport-dim">
+        <app-search [sortTypes]="sortTypes" [highToLow]="highToLow" (selectionChange)="changeSelection($event)"
+                    (filterTrigger)="filter($event)" (sortTrigger)="toggleSort()"></app-search>
+        <div class="outer-card-div">
+            <app-not-found givenHeight="calc(100vh - 350px)" description="No results were found" icon="sentiment_dissatisfied"
+                           *ngIf="ecInstancesChunk && ecInstancesChunk.length === 0"></app-not-found>
+            <div *ngFor ="let currEcInstance of ecInstancesChunk">
+                <app-ec2-instance [currEcInstance]="currEcInstance"></app-ec2-instance>
+            </div>
+        </div>
+    </cdk-virtual-scroll-viewport>
+
+    <!-- Table View (Virtual) -->
+    <div *ngIf="virtual">
+        <app-search [sortTypes]="sortTypes" [highToLow]="highToLow" (selectionChange)="changeSelection($event)"
+                    (filterTrigger)="filter($event)" (sortTrigger)="toggleSort()"></app-search>
+        <app-ec2-instance-table (emitFetch)="fetchMore()"
+                                [ecInstancesChunk]="ecInstancesChunk" [scrollEmit]="scrollEmit"></app-ec2-instance-table>
+    </div>
+</div>

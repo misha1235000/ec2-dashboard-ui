@@ -1,0 +1,43 @@
+.spinner-outer {
+    display: flex;
+    flex-wrap: wrap;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewport-dim {
+    height: inherit;
+    width:100%;
+}
+
+.outer-card-div {
+    display:flex;
+    flex-wrap: wrap;
+    margin:40px 20px;
+    justify-content: center;
+}
+
+.dashboard-main {
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+}
+
+.toggle-stl {
+    position: absolute;
+    right: 20px;
+    top :21px;
+    z-index: 20;
+    color:white;
+}
+
+.errImg {
+    width:51%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+}

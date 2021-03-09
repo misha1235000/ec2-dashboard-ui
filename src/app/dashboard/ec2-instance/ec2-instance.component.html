@@ -1,0 +1,39 @@
+<mat-card class ="card-stl">
+    <mat-card-header>
+        <mat-card-title class="card-title-stl">{{ currEcInstance.name }}</mat-card-title>
+        <mat-card-subtitle>{{ currEcInstance.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="type-stl">{{ currEcInstance.type.name }}</div>
+        <div [ngSwitch]="currEcInstance.state" class="icons-outer"
+                [matTooltip]="currEcInstance.state" matTooltipPosition="above">
+            <mat-icon class="state-icon running-icon" *ngSwitchCase="'Running'">check</mat-icon>
+            <mat-icon class="state-icon off-icon" *ngSwitchCase="'Off'">power_settings_new</mat-icon>
+            <mat-icon class="state-icon restarting-icon" *ngSwitchCase="'Restarting'">autorenew</mat-icon>
+        </div>
+        <div class="inner-content-div">
+            <mat-icon class="lock-icon">lock</mat-icon>
+            <div class="div-ip-title">Private IP:</div>
+            <div class="div-ip">
+                <div class="div-ip-text">{{ currEcInstance.privateIp }}</div>
+                <button matTooltip="Copy IP Address" matTooltipPosition="above" mat-icon-button
+                        color="primary" (click)="copyClipboard(currEcInstance.privateIp)" class="copy-btn">
+                    <mat-icon class="copy-icon">content_copy</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="inner-content-div">
+            <mat-icon class="lock-icon">lock_open</mat-icon>
+            <div class="div-ip-title">Public IP:</div>
+            <div class="div-ip">
+                <div class="div-ip-text">{{ currEcInstance.publicIp }}</div>
+                <button matTooltip="Copy IP Address" (click)="copyClipboard(currEcInstance.publicIp)"
+                        matTooltipPosition="above" mat-icon-button color="primary" class="copy-btn">
+                    <mat-icon class="copy-icon">content_copy</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="az-text">{{ currEcInstance.az }}</div>
+
+    </mat-card-content>
+</mat-card>
