@@ -1,27 +1,26 @@
-# ECClient
+# EC2 Instances Dashboard UI Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+EC2 Instances Dashboard is a web application, which gives you the functionality of viewing all of your ec2 instances with search and sort abilities of the data.
 
-## Development server
+## Clone Repository
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repository by using the git cli
 
-## Code scaffolding
+```node
+git clone https://github.com/misha1235000/ec-dashboard-ui.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Install Packages
 
-## Build
+After cloning the repository, you need to cd to ec-dashboard-ui, and run NPM install and NPM run serve:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+cd ec-dashboard-ui
+npm install
+npx ng serve
+```
+Thats it, now you can enter the website in the localhost URL:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+http://localhost:4200
+```
