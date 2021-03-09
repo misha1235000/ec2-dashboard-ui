@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DashboardService {
-  private dashboardUrl = 'http://localhost:3005/api/ec2';
+  private dashboardUrl = 'https://ec-dashboard-api.herokuapp.com/api/ec2';
 
   constructor(private http: HttpClient) { }
 
