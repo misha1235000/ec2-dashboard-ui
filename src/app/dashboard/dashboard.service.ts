@@ -5,12 +5,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Iec2Instance } from './ec2-instance/iec2-instance';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-  private dashboardUrl = 'https://ec-dashboard-api.herokuapp.com/api/ec2';
+  private dashboardUrl = `${environment.dashboardApi}/api/ec2`;
 
   constructor(private http: HttpClient) { }
 
