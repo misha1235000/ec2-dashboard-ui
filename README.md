@@ -24,3 +24,6 @@ Thats it, now you can enter the website in the localhost URL:
 ```bash
 http://localhost:4200
 ```
+
+> Note: The default API URL is: http://localhost  
+> You can change it in the environment.ts file located in: `src/environments/environment.ts` according to your API URL.
