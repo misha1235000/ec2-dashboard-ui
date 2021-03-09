@@ -34,11 +34,6 @@
     justify-content: center;
 }
 
-.copy-btn {
-    position: relative;
-    right: 40px;
-}
-
 .virtual-stl {
     height: 65vh;
     width:100%;
