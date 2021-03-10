@@ -7,15 +7,15 @@ EC2 Instances Dashboard is a web application, which gives you the functionality 
 Clone the repository by using the git cli
 
 ```node
-git clone https://github.com/misha1235000/ec-dashboard-ui.git
+git clone https://github.com/misha1235000/ec2-dashboard-ui.git
 ```
 
 ## Install Packages
 
-After cloning the repository, you need to cd to ec-dashboard-ui, and run NPM install and NPM run serve:
+After cloning the repository, you need to run:
 
 ```bash
-cd ec-dashboard-ui
+cd ec2-dashboard-ui
 npm install
 npx ng serve
 ```
