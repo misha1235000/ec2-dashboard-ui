@@ -3,7 +3,7 @@
 EC2 Instances Dashboard is a web application, which gives you the functionality of viewing all of your ec2 instances with search and sort abilities of the data.
 
 ## Demo
-You can view the demo of the application in: https://ec-dashboard.herokuapp.com/
+You can view the demo of the application on: https://ec-dashboard.herokuapp.com/
 
 ## Clone Repository
 
