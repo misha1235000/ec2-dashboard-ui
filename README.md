@@ -2,6 +2,9 @@
 
 EC2 Instances Dashboard is a web application, which gives you the functionality of viewing all of your ec2 instances with search and sort abilities of the data.
 
+## Demo
+You can view the demo of the application on: https://ec-dashboard.herokuapp.com/
+
 ## Clone Repository
 
 Clone the repository by using the git cli
@@ -25,5 +28,6 @@ Thats it, now you can enter the website in the localhost URL:
 http://localhost:4200
 ```
 
-> Note: The default API URL is: http://localhost  
-> You can change it in the environment.ts file located in: `src/environments/environment.ts` according to your API URL.
+> Note: The default API URL is: http://localhost
+> You can change it in the environment.ts file located in: `src/environments/environment.ts` according to your API URL.  
+> The backend API can be found in this repository: https://github.com/misha1235000/ec2-dashboard-api
