@@ -3,6 +3,7 @@
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Iec2Instance } from './iec2-instance';
 
 @Component({
   selector: 'app-ec2-instance',
@@ -10,7 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./ec2-instance.component.css']
 })
 export class Ec2InstanceComponent implements OnInit {
-  @Input() currEcInstance: any;
+  @Input() currEcInstance: Iec2Instance | undefined;
+  
   constructor(private clipboard: Clipboard,
               private snackBar: MatSnackBar) { }
 
@@ -21,12 +23,14 @@ export class Ec2InstanceComponent implements OnInit {
   copyClipboard(value: string): void {
     this.clipboard.copy(value);
 
-    this.snackBar.open('Content copied to clipboard', 'Close', {
-      duration: 3000
-    });
+    this.snackBar.open(
+      'Content copied to clipboard',
+      'Close', 
+      {
+        duration: 3000
+      }
+    );
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

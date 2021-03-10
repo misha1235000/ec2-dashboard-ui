@@ -4,7 +4,10 @@
         <img class="errImg" src="/assets/500_error.png"/>
      </div>
 
-    <mat-slide-toggle *ngIf="ecInstancesOriginal && ecInstancesOriginal.length > 0" color="warn" (change)="changeView();" class="toggle-stl">Table View (Virtual)</mat-slide-toggle>
+    <mat-slide-toggle *ngIf="ecInstancesOriginal && ecInstancesOriginal.length > 0" color="warn"
+                      (change)="changeView();" class="toggle-stl">
+        Table View (Virtual)
+    </mat-slide-toggle>
 
     <div class="spinner-outer" *ngIf="!ecInstancesOriginal && !internalError">
         <mat-spinner></mat-spinner>

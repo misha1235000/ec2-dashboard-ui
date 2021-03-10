@@ -1,4 +1,4 @@
-<mat-card class ="card-stl">
+<mat-card class ="card-stl" *ngIf="currEcInstance">
     <mat-card-header>
         <mat-card-title class="card-title-stl">{{ currEcInstance.name }}</mat-card-title>
         <mat-card-subtitle>{{ currEcInstance.id }}</mat-card-subtitle>
@@ -34,6 +34,5 @@
             </div>
         </div>
         <div class="az-text">{{ currEcInstance.az }}</div>
-
     </mat-card-content>
 </mat-card>

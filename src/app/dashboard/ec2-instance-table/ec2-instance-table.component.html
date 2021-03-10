@@ -18,9 +18,18 @@
             <div style="flex: 20%"> {{ currEcInstance.name }} </div>
             <div style="flex: 10%"> {{ currEcInstance.type.name }} </div>
             <div style="flex: 10%" [ngSwitch]="currEcInstance.state">
-                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon running-icon" *ngSwitchCase="'Running'">check</mat-icon>
-                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon off-icon" *ngSwitchCase="'Off'">power_settings_new</mat-icon>
-                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above" class="state-icon restarting-icon" *ngSwitchCase="'Restarting'">autorenew</mat-icon>
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above"
+                          class="state-icon running-icon" *ngSwitchCase="'Running'">
+                    check
+                </mat-icon>
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above"
+                          class="state-icon off-icon" *ngSwitchCase="'Off'">
+                    power_settings_new
+                </mat-icon>
+                <mat-icon [matTooltip]="currEcInstance.state" matTooltipPosition="above"
+                          class="state-icon restarting-icon" *ngSwitchCase="'Restarting'">
+                    autorenew
+                </mat-icon>
             </div>
             <div style="flex: 10%"> {{ currEcInstance.az }} </div>
             <div style="flex: 10%">
@@ -28,8 +37,8 @@
             </div>
             <div style="flex: 5%">
                 <button matTooltip="Copy IP Address" (click)="copyClipboard(currEcInstance.privateIp)"
-                                matTooltipPosition="above" mat-icon-button color="primary">
-                            <mat-icon>content_copy</mat-icon>
+                        matTooltipPosition="above" mat-icon-button color="primary">
+                    <mat-icon>content_copy</mat-icon>
                 </button>
             </div>
             <div style="flex: 10%"> {{ currEcInstance.publicIp }} </div>

@@ -1,11 +1,12 @@
 // dashboard.component
 
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { AfterViewInit, Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { filter, map, pairwise, throttleTime } from 'rxjs/operators';
 import { DashboardService } from './dashboard.service';
 import { Iec2Instance } from './ec2-instance/iec2-instance';
 
-enum SortType {
+export enum SortType {
   NAME = 0,
   VALUE = 1
 }
@@ -16,8 +17,7 @@ enum SortType {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  @ViewChild('scroller') scroller: any;
-  @ViewChild('progress') progress: any;
+  @ViewChild('scroller') scroller: CdkVirtualScrollViewport | undefined;
 
   sortTypes = [{ name: 'Name', value: SortType.NAME },
                { name: 'Type', value: SortType.VALUE }];
@@ -29,14 +29,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ecFiltered: Iec2Instance[] | undefined;
   isFilter: boolean | undefined;
   highToLow: boolean | undefined;
-  selectedSort: any;
+  selectedSort: number | undefined;
   scrollEmit: boolean | undefined;
   internalError: boolean | undefined;
   virtual = false;
 
   constructor(private dashboardService: DashboardService,
-              private ngZone: NgZone) {
-              }
+              private ngZone: NgZone) {}
 
   /**
    * When the component initializes.
@@ -208,9 +207,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       if (this.scroller) {
         this.scroller.elementScrolled().pipe(
-          map(() => this.scroller.measureScrollOffset('bottom')),
+          map(() => this.scroller && this.scroller.measureScrollOffset('bottom')),
           pairwise(),
-          filter(([y1, y2]) => (y2 < y1 && y2 < 160)),
+          filter(([y1, y2]) => ((y1 && y2) && (y2 < y1 && y2 < 160)) as boolean),
           throttleTime(500)
         ).subscribe(() => {
             this.ngZone.run(() => {

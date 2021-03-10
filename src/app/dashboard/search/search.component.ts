@@ -2,6 +2,7 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { SortType } from '../dashboard.component';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit {
   @Output() selectionChange = new EventEmitter();
   @Output() filterTrigger = new EventEmitter();
   @Output() sortTrigger = new EventEmitter();
-  @Input() sortTypes: any;
+  @Input() sortTypes: { name: string, value: SortType }[] | undefined;
   @Input() highToLow: boolean | undefined;
 
   searchFormControl = new FormControl();

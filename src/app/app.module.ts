@@ -1,3 +1,5 @@
+// app.module
+
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
@@ -22,7 +23,6 @@ import { NotFoundComponent } from './dashboard/not-found/not-found.component';
     AppComponent,
     ToolbarComponent,
     DashboardComponent,
-    LoginComponent,
     Ec2InstanceComponent,
     SearchComponent,
     Ec2InstanceTableComponent,
