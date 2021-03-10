@@ -26,5 +26,5 @@ http://localhost:4200
 ```
 
 > Note: The default API URL is: http://localhost  
-> You can change it in the environment.ts file located in: `src/environments/environment.ts` according to your API URL.
+> You can change it in the environment.ts file located in: `src/environments/environment.ts` according to your API URL.  
 > The backend API can be found in this repository: https://github.com/misha1235000/ec2-dashboard-api
