@@ -7,7 +7,7 @@ You can view the demo of the application on: https://ec-dashboard.herokuapp.com/
 
 ## Clone Repository
 
-Clone the repository by using the git cli
+Clone the repository by using the git cli.
 
 ```node
 git clone https://github.com/misha1235000/ec2-dashboard-ui.git
